@@ -8,7 +8,7 @@ function sumbit(id) {
   sumbitedButton = true;
 }
 
-function createLi(array) {
+function createBoxes(array) {
   for (let i = 0; i < array.length; i++) {
     document.getElementById("display").innerHTML += "<br>";
     for (let j = 0; j < array[i].length; j++) {
@@ -23,10 +23,10 @@ function displayBoxes(option) {
   let array = logic(length);
   if (option == 1) {
     document.getElementById("display").innerHTML = "";
-    createLi(array);
+    createBoxes(array);
     coloring(length);
   } else {
-    createLi(array);
+    createBoxes(array);
     coloring(length);
   }
 }
