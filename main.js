@@ -1,11 +1,18 @@
 let length = 0;
 let sumbitedButton = false;
-const colors = ["red", "blue", "green", "violet", "cyan", "white", "black"];
 function sumbit(id) {
   length = document.getElementById(`${id}`).value;
-  if (sumbitedButton) displayBoxes(1);
-  else displayBoxes(0);
-  sumbitedButton = true;
+  if (length > 25) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Number is to much Big",
+    });
+  } else {
+    if (sumbitedButton) displayBoxes(1);
+    else displayBoxes(0);
+    sumbitedButton = true;
+  }
 }
 
 function createBoxes(array) {
@@ -74,11 +81,21 @@ function logic(n) {
 
 function fillArrayWithRandomColor(count) {
   let array = [];
+  let x = 0;
+  let counter = 0;
   for (let i = 0; i <= count; i++) {
-    let x = 255 - i * 10;
-    let y = i * 10;
-    let z = i * 5;
-    array.push(`rgb(${x},${y},${z})`);
+    if (counter == 0) {
+      x = i * 5;
+      if (x > 355) {
+        counter = 1;
+        x = 0;
+      }
+      array.push(`hsl(${x},50%,50%)`);
+    }
+    if (counter == 1) {
+      x = i * 5;
+      array.push(`hsl(${x},75%,75%)`);
+    }
   }
   return array;
 }

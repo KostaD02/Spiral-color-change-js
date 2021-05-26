@@ -12,13 +12,18 @@
     <meta property="og:description" content="See yourself spiral" />
     <title>Spiral color change</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <center>
         <div class="input">
             <input type="text" id="sumbit" placeholder="Input number">
-            <button onclick="sumbit(`sumbit`)">Sumbit</button>
+            <div class="button">
+                <div class="wrapper">
+                    <a onclick="sumbit(`sumbit`)"><span>Sumbit</span></a>
+                </div>
+            </div>
         </div>
         <div class="display" id="display">
         </div>

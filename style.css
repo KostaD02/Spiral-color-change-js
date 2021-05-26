@@ -4,28 +4,69 @@ body {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
 .input {
-  width: 30%;
+  width: 80%;
   margin: 100px auto;
+  margin-bottom: 0px;
 }
 .input input {
   background-color: transparent;
-  border: 1px solid white;
-  padding: 10px;
+  border: 2px solid white;
+  padding: 14px;
   border-radius: 5%;
   color: white;
+  margin-right: 5px;
+}
+.input input::placeholder {
+  color: white;
+}
+.wrapper,
+.button {
+  display: inline-block;
+}
+a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
 }
 
-.input button {
-  padding: 10px 20px;
-  background-color: green;
-  border: none;
-  margin-left: 10px;
-  border-radius: 10%;
+a span {
+  position: relative;
+  z-index: 2;
+}
+
+a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: green;
+  transition: all 0.35s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:hover:after {
+  width: 100%;
 }
 
 .display {
   width: 80%;
   margin: auto;
+  margin-bottom: 50px;
 }
 
 .display div {
